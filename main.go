@@ -2,11 +2,16 @@ package main
 
 import "net/http"
 
+func root() {
+}
+
 func main() {
-	serveMux := http.NewServeMux()
+	mux := http.NewServeMux()
+
+  mux.HandleFunc("/", ))
 	server := http.Server{
 		Addr:    ":8080",
-		Handler: serveMux,
+		Handler: mux,
 	}
 	server.ListenAndServe()
 }
